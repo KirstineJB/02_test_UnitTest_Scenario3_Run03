@@ -2,7 +2,7 @@ name: SonarQube
 on:
   push:
     branches:
-      - main
+       - test/scenario3_setup
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -43,7 +43,7 @@ jobs:
         shell: powershell
         run: |
           ${{ runner.temp }}\scanner\dotnet-sonarscanner begin `
-            /k:"KirstineJB_02_test_UnitTest" `
+            /k:"KirstineJB_02_test_UnitTest_Scenario3_Run03" `
             /o:"kirstine13" `
             /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
             /d:sonar.cs.vstest.reportsPaths="**/*.trx" `
